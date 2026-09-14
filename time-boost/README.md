@@ -1,3 +1,5 @@
+<img src="images/icon.png" alt="Time Boost clock and subway icon" width="128" />
+
 # Time Boost for Subway Builder
 
 **Five extra speed levels beyond the game's native ultrafast setting, with a live readout of how fast your simulation is actually running.**
@@ -15,7 +17,7 @@ The screenshot shows a real gameplay reading, not a promised speed. **2.81 hr/s*
 
 ## Installation
 
-1. Download **`time-boost-1.7.1.zip`** from the [Releases page](https://github.com/patchbaywizard/subway-builder-time-boost/releases/latest). Use this release asset rather than GitHub's automatically generated source archive.
+1. Download **`time-boost-1.8.0.zip`** from the [Releases page](https://github.com/patchbaywizard/subway-builder-time-boost/releases/latest). Use this release asset rather than GitHub's automatically generated source archive.
 2. Extract it. Place the entire **`time-boost`** folder inside your Subway Builder mods folder:
 
    | Platform | Mods folder |
@@ -28,7 +30,7 @@ The screenshot shows a real gameplay reading, not a promised speed. **2.81 hr/s*
 4. Restart Subway Builder, open **Settings → Mods**, and enable **Time Boost**.
 5. Load a city. The controls appear in the bottom bar.
 
-Already installed? Quit the game, replace the old `time-boost` folder with the extracted folder, then reopen the game.
+Already installed? Quit the game, replace the old `time-boost` folder with the extracted folder, then reopen the game. Version 1.8.0 changes the mod ID to `time-boost` for registry compatibility, so enable Time Boost again in Settings → Mods. Do not keep both old and new copies installed.
 
 ## Controls
 
@@ -78,3 +80,5 @@ The release ZIP includes the mod, this guide, and the screenshot. The packaging 
 [Official mod installation guide](https://www.subwaybuilder.com/docs/getting-started) · [Speed rule API](https://www.subwaybuilder.com/docs/api-reference/constants) · [UI API](https://www.subwaybuilder.com/docs/api-reference/ui)
 
 An independent community mod by **Patchbay Wizard**. Not an official Subway Builder release.
+
+The code was developed with AI assistance, and the clock-and-subway icon was AI-generated.

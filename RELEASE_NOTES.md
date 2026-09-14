@@ -1,20 +1,15 @@
-# Time Boost 1.7.1
+# Time Boost 1.8.0
 
-Five extra simulation speed levels for Subway Builder, with a live **Actual hr/s** readout.
+![Time Boost icon](https://raw.githubusercontent.com/patchbaywizard/subway-builder-time-boost/v1.8.0/time-boost/images/icon.png)
 
-![Time Boost in game](https://raw.githubusercontent.com/patchbaywizard/subway-builder-time-boost/v1.7.1/time-boost/images/time-boost.png)
+Registry-ready packaging for Time Boost, with a new clock-and-subway icon. Gameplay behavior is unchanged: Boost 1–5, extended bracket hotkeys, and an actual simulation-speed readout.
 
-## Included
+- Adds the required game compatibility declaration (Subway Builder 1.7.1 or newer).
+- Includes a standalone manifest release asset for Railyard validation.
+- Changes the mod ID to `time-boost` to match the registry listing.
 
-- **Boost 1–5** buttons in the bottom bar.
-- **`[` / `]`** shortcuts extended beyond the native ultrafast setting.
-- Measured game hours per real second, averaged over three-second windows.
-- Reset and pause-preserving controls.
+**Upgrading:** Quit the game, replace the existing `time-boost` folder, then enable Time Boost again under Settings → Mods. Do not install a second copy alongside the old version.
 
-**Boost levels are not guaranteed speeds.** Select the level that gives your city the best measured throughput. Higher levels can run slower when the simulation cannot keep up.
+Download `time-boost-1.8.0.zip` for manual installation. The separate `manifest.json` is registry metadata and does not need to be installed separately.
 
-## Install
-
-Download **time-boost-1.7.1.zip**, extract the `time-boost` folder into your game's mods directory, restart Subway Builder, and enable **Time Boost** in **Settings → Mods**. See the [README](https://github.com/patchbaywizard/subway-builder-time-boost#installation) for platform-specific paths and controls.
-
-Developed against Subway Builder 1.7.1. Gameplay has been observed on macOS; Windows and Linux are untested. Eight automated API-mock tests pass. Native View-menu entries are not supported.
+Higher boost levels are not guaranteed to run faster. Use the Actual hr/s readout to choose a level for your network. Observed on macOS; Windows and Linux remain untested. Eight API-mock tests pass. Code developed with AI assistance; icon AI-generated.

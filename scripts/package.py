@@ -19,6 +19,7 @@ with zipfile.ZipFile(archive) as bundle:
     assert bundle.testzip() is None
     for path in files:
         assert bundle.read(str(path.relative_to(root))) == path.read_bytes()
+(output / 'manifest.json').write_bytes((source / 'manifest.json').read_bytes())
 checksum = archive.with_suffix('.zip.sha256')
 checksum.write_text(f'{hashlib.sha256(archive.read_bytes()).hexdigest()}  {archive.name}\n')
 print(f'Built and verified {archive.name} ({len(files)} files)')
