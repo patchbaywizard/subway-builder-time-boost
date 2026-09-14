@@ -2,9 +2,9 @@
   "id": "time-boost",
   "name": "Time Boost",
   "description": "Adds five simulation boost levels, extended bracket hotkeys, and a measured hours-per-second readout.",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "author": {
-    "name": "Patchbay Wizard"
+    "name": "patchbaywizard"
   },
   "main": "index.js",
   "dependencies": {

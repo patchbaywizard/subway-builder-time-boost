@@ -17,7 +17,7 @@ The screenshot shows a real gameplay reading, not a promised speed. **2.81 hr/s*
 
 ## Installation
 
-1. Download **`time-boost-1.8.0.zip`** from the [Releases page](https://github.com/patchbaywizard/subway-builder-time-boost/releases/latest). Use this release asset rather than GitHub's automatically generated source archive.
+1. Download **`time-boost-1.8.1.zip`** from the [Releases page](https://github.com/patchbaywizard/subway-builder-time-boost/releases/latest). Use this release asset rather than GitHub's automatically generated source archive.
 2. Extract it. Place the entire **`time-boost`** folder inside your Subway Builder mods folder:
 
    | Platform | Mods folder |
@@ -79,6 +79,8 @@ The release ZIP includes the mod, this guide, and the screenshot. The packaging 
 
 [Official mod installation guide](https://www.subwaybuilder.com/docs/getting-started) · [Speed rule API](https://www.subwaybuilder.com/docs/api-reference/constants) · [UI API](https://www.subwaybuilder.com/docs/api-reference/ui)
 
-An independent community mod by **Patchbay Wizard**. Not an official Subway Builder release.
+Developed and maintained by **[patchbaywizard](https://github.com/patchbaywizard)**. Not an official Subway Builder release.
 
 The code was developed with AI assistance, and the clock-and-subway icon was AI-generated.
+
+[Attribution and credits](ATTRIBUTION.md)

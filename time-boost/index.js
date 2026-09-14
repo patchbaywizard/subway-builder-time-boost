@@ -1,3 +1,5 @@
+// Time Boost — developed and maintained by patchbaywizard.
+// https://github.com/patchbaywizard/subway-builder-time-boost
 (function () {
   'use strict';
   const api = window.SubwayBuilderAPI;
