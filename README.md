@@ -17,8 +17,8 @@ The screenshot shows a real gameplay reading, not a promised speed. **2.81 hr/s*
 
 ## Installation
 
-1. Download **`time-boost-1.8.1.zip`** from the [Releases page](https://github.com/patchbaywizard/subway-builder-time-boost/releases/latest). Use this release asset rather than GitHub's automatically generated source archive.
-2. Extract it. Place the entire **`time-boost`** folder inside your Subway Builder mods folder:
+1. Download **`time-boost-1.8.2.zip`** from the [Releases page](https://github.com/patchbaywizard/subway-builder-time-boost/releases/latest). Use this release asset rather than GitHub's automatically generated source archive.
+2. Create a **`time-boost`** folder inside your Subway Builder mods folder, then extract the ZIP contents directly into it:
 
    | Platform | Mods folder |
    | --- | --- |
@@ -30,7 +30,7 @@ The screenshot shows a real gameplay reading, not a promised speed. **2.81 hr/s*
 4. Restart Subway Builder, open **Settings → Mods**, and enable **Time Boost**.
 5. Load a city. The controls appear in the bottom bar.
 
-Already installed? Quit the game, replace the old `time-boost` folder with the extracted folder, then reopen the game. Version 1.8.0 changes the mod ID to `time-boost` for registry compatibility, so enable Time Boost again in Settings → Mods. Do not keep both old and new copies installed.
+Already installed? Quit the game and replace the contents of your existing `time-boost` folder with the ZIP contents, then reopen the game. Version 1.8.0 changes the mod ID to `time-boost` for registry compatibility, so enable Time Boost again in Settings → Mods. Do not keep both old and new copies installed.
 
 ## Controls
 

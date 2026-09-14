@@ -1,17 +1,90 @@
-# Time Boost 1.8.1
+<img src="https://raw.githubusercontent.com/patchbaywizard/subway-builder-time-boost/v1.8.2/time-boost/images/icon.png" alt="Time Boost clock and subway icon" width="128" />
 
-![Time Boost icon](https://raw.githubusercontent.com/patchbaywizard/subway-builder-time-boost/v1.8.1/time-boost/images/icon.png)
+# Time Boost 1.8.2 for Subway Builder
 
-Registry-ready packaging for Time Boost, with a new clock-and-subway icon. Gameplay behavior is unchanged: Boost 1–5, extended bracket hotkeys, and an actual simulation-speed readout.
+**Five extra speed levels beyond the game's native ultrafast setting, with a live readout of how fast your simulation is actually running.**
 
-- Adds the required game compatibility declaration (Subway Builder 1.7.1 or newer).
-- Includes a standalone manifest release asset for Railyard validation.
-- Changes the mod ID to `time-boost` to match the registry listing.
+![Time Boost controls showing Boost 1 through Boost 5, Reset, and an actual speed of 2.81 game hours per real second](https://raw.githubusercontent.com/patchbaywizard/subway-builder-time-boost/v1.8.2/time-boost/images/time-boost.png)
 
-**Upgrading:** Quit the game, replace the existing `time-boost` folder, then enable Time Boost again under Settings → Mods. Do not install a second copy alongside the old version.
+The screenshot shows a real gameplay reading, not a promised speed. **2.81 hr/s** means 2.81 in-game hours passed per real second during the measurement window.
 
-Download `time-boost-1.8.1.zip` for manual installation. The separate `manifest.json` is registry metadata and does not need to be installed separately.
+## What it does
 
-Higher boost levels are not guaranteed to run faster. Use the Actual hr/s readout to choose a level for your network. Observed on macOS; Windows and Linux remain untested. Eight API-mock tests pass. Code developed with AI assistance; icon AI-generated.
+- Adds **Boost 1–5** and **Reset** buttons to the bottom bar.
+- Extends the default **`[` / `]`** speed shortcuts beyond native ultrafast.
+- Displays **Actual … hr/s**, measured from advancing game time over three-second windows.
+- Keeps pause under your control: selecting a boost does not unpause the game.
 
-Developer and maintainer: [patchbaywizard](https://github.com/patchbaywizard). Includes attribution for AI assistance and the gameplay screenshot.
+## Installation
+
+1. Download **`time-boost-1.8.2.zip`** from the [Releases page](https://github.com/patchbaywizard/subway-builder-time-boost/releases/latest). Use this release asset rather than GitHub's automatically generated source archive.
+2. Create a **`time-boost`** folder inside your Subway Builder mods folder, then extract the ZIP contents directly into it:
+
+   | Platform | Mods folder |
+   | --- | --- |
+   | macOS | `~/Library/Application Support/metro-maker4/mods/` |
+   | Windows | `%APPDATA%\metro-maker4\mods\` |
+   | Linux | `~/.config/metro-maker4/mods/` |
+
+3. Check that the resulting structure is `mods/time-boost/manifest.json` and `mods/time-boost/index.js`. Avoid nesting another `time-boost` folder inside it.
+4. Restart Subway Builder, open **Settings → Mods**, and enable **Time Boost**.
+5. Load a city. The controls appear in the bottom bar.
+
+Already installed? Quit the game and replace the contents of your existing `time-boost` folder with the ZIP contents, then reopen the game. Version 1.8.0 changes the mod ID to `time-boost` for registry compatibility, so enable Time Boost again in Settings → Mods. Do not keep both old and new copies installed.
+
+## Controls
+
+| Control | Action |
+| --- | --- |
+| **Boost 1–5** | Select an extra simulation level directly. |
+| **`]`** | Increase native speed; after ultrafast, step through Boost 1 → 2 → 3 → 4 → 5. Stops at Boost 5. |
+| **`[`** | Step down through boost levels, return to native ultrafast, then continue through native speeds. |
+| **Reset** | Restore the original ultrafast rate and update batch settings. |
+| **Actual … hr/s** | Show measured game hours per real second. Wait a few seconds after changing levels for a fresh reading. |
+
+The native ultrafast indicator remains selected while a boost is active. Selecting a slower native speed clears the boost. Starting or loading a game, or returning to the menu, also clears it.
+
+Bracket shortcuts are ignored while typing in text fields, during text composition, in dialogs, or with modifier keys. The extension uses the default literal brackets; remapped shortcuts are not extended.
+
+## Choosing a level
+
+Start with a lower boost and step up while watching **Actual hr/s**. **A higher level is a larger simulation request, not a guaranteed increase in measured speed.** Busy networks, CPU load, and the game's simulation overhead can limit throughput. If a higher level reads slower, step back down.
+
+The mod advances the game's normal simulation. It does not jump the clock or skip train and passenger simulation to achieve a displayed number. The speed readout reports elapsed game time rather than the requested speed.
+
+## Compatibility and limitations
+
+- Developed against the mod API in **Subway Builder 1.7.1**. Gameplay controls and measured speeds have been observed on macOS.
+- Uses platform-independent mod APIs, but **Windows and Linux have not been tested**.
+- Does not add entries to the native **View** menu; the current public mod API does not expose that integration.
+- Other mods that change ultrafast speed or simulation batch settings may conflict with Time Boost.
+- No dependencies or build step are needed to play. No application files or save files are patched.
+
+## Removal
+
+Click **Reset**, disable **Time Boost** in Settings → Mods, and restart the game. You can then delete its folder.
+
+## Development
+
+From the repository root, run:
+
+```sh
+node --test tests/time-boost.test.cjs
+python3 scripts/package.py
+```
+
+The automated tests use an API mock. They cover rate changes, bounded batching, bracket stepping, pause preservation, restoration, reload, and measured throughput; they are not cross-platform or live-game performance tests.
+
+The release ZIP includes the mod, this guide, and the screenshot. The packaging script also writes a SHA-256 checksum.
+
+[Official mod installation guide](https://www.subwaybuilder.com/docs/getting-started) · [Speed rule API](https://www.subwaybuilder.com/docs/api-reference/constants) · [UI API](https://www.subwaybuilder.com/docs/api-reference/ui)
+
+Developed and maintained by **[patchbaywizard](https://github.com/patchbaywizard)**. Not an official Subway Builder release.
+
+The code was developed with AI assistance, and the clock-and-subway icon was AI-generated.
+
+[Attribution and credits](https://github.com/patchbaywizard/subway-builder-time-boost/blob/main/time-boost/ATTRIBUTION.md)
+
+## Registry packaging fix
+
+The ZIP now contains `manifest.json` and `index.js` at its top level. Both the bundled and standalone manifests declare version `1.8.2`, matching release tag `v1.8.2`. This fixes the archive layout that prevented registry integrity validation of v1.8.1.

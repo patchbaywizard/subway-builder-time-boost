@@ -14,11 +14,17 @@ archive = output / f"time-boost-{manifest['version']}.zip"
 files = sorted(p for p in source.rglob('*') if p.is_file() and p.name != '.DS_Store')
 with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as bundle:
     for path in files:
-        bundle.write(path, path.relative_to(root))
+        bundle.write(path, path.relative_to(source))
 with zipfile.ZipFile(archive) as bundle:
     assert bundle.testzip() is None
+    assert 'manifest.json' in bundle.namelist(), 'Registry requires a root manifest'
+    packaged = json.loads(bundle.read('manifest.json'))
+    assert packaged['version'] == manifest['version']
+    assert archive.name == f"time-boost-{packaged['version']}.zip"
+    assert packaged['main'] in bundle.namelist(), 'Root entry point missing'
+    assert bundle.read('manifest.json') == (source / 'manifest.json').read_bytes()
     for path in files:
-        assert bundle.read(str(path.relative_to(root))) == path.read_bytes()
+        assert bundle.read(str(path.relative_to(source))) == path.read_bytes()
 (output / 'manifest.json').write_bytes((source / 'manifest.json').read_bytes())
 checksum = archive.with_suffix('.zip.sha256')
 checksum.write_text(f'{hashlib.sha256(archive.read_bytes()).hexdigest()}  {archive.name}\n')
